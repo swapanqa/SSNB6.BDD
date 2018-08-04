@@ -45,7 +45,7 @@ Feature: Spree login functionality
 	  Then Browser display Login page
 	  And Login not success message "Invalid email or password." display
 	 
-	 Scenario Outline: 3.Valid user with valid password Data Driven
+	Scenario Outline: 3.Valid user with valid password Data Driven
 	  Given Not a validated user
 	  When User browse to the site
 	  Then Spree home page should display

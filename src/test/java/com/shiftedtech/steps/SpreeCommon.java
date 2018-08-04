@@ -4,6 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.shiftedtech.framework.DriverFactory;
+
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -14,15 +16,17 @@ public class SpreeCommon extends BaseStep{
 
 	@Before
 	public void setUp() {
-		ChromeDriverManager.getInstance().setup();
-		driver = new ChromeDriver();
+		//DriverFactory.getInstance().getDriver();
+		//ChromeDriverManager.getInstance().setup();
+		//driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
 	@After
 	public void tearDown() {
-		driver.close();
-		driver.quit();
+		//driver.close();
+		//driver.quit();
+		DriverFactory.getInstance().removeDriver();
 	}
 	
 	@Given("Not a validated user")
