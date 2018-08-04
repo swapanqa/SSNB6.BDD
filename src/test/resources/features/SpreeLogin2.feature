@@ -16,7 +16,7 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-#@tag
+
 Feature: Spree login functionality
   This explain how verious login functionality will work
 
