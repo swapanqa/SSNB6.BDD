@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.shiftedtech.framework.DriverFactory;
+import com.shiftedtech.framework.PropertyReaderService;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -36,6 +37,6 @@ public class SpreeCommon extends BaseStep{
 
 	@When("User browse to the site")
 	public void user_browse_to_the_site() {
-	    driver.navigate().to("http://spree.shiftedtech.com/");
+	    driver.navigate().to(PropertyReaderService.getInstance().getProperty("APP_URL"));
 	}
 }

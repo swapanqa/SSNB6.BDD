@@ -1,15 +1,42 @@
 package com.shiftedtech.steps;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.startsWith;
-
-import org.openqa.selenium.By;
+import com.shiftedtech.framework.PageFactory;
+import com.shiftedtech.pages.LoginPage;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class LoginPageStep extends BaseStep {
+	
+	LoginPage loginPage = PageFactory.getInstance().loginPage();
+	
 	@Then("Browser display Login page")
+	public void browser_display_Login_page() {
+		loginPage.verifyTitle();
+	}
+
+	@When("^User enter user email as \"([^\"]*)\"$")
+	public void user_enter_user_email_as(String email) {
+		loginPage.setEmailAdderss(email);
+	}
+
+	@When("^User enter password as \"([^\"]*)\"$")
+	public void user_enter_password_as(String password) {
+		loginPage.setPassword(password);
+	}
+
+	@When("User click login button")
+	public void user_click_login_button() {
+		loginPage.clickLogin();
+	}
+	
+	@Then("^Login not success message \"([^\"]*)\" display$")
+	public void login_not_success_message_display(String expectedmsg) {
+		loginPage.verifyLoginError(expectedmsg);
+	}
+
+	/*
+	 @Then("Browser display Login page")
 	public void browser_display_Login_page() {
 		String title = driver.getTitle();
 	    assertThat(title, startsWith("Login - Spree Demo Site"));
@@ -36,4 +63,5 @@ public class LoginPageStep extends BaseStep {
 		 assertThat(msg, startsWith(expectedmsg));
 	}
 
+	 */
 }
