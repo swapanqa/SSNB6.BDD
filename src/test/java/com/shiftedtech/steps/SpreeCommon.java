@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.shiftedtech.framework.DriverFactory;
+import com.shiftedtech.framework.PageFactory;
 import com.shiftedtech.framework.PropertyReaderService;
 
 import cucumber.api.java.After;
@@ -28,6 +29,7 @@ public class SpreeCommon extends BaseStep{
 		//driver.close();
 		//driver.quit();
 		DriverFactory.getInstance().removeDriver();
+		PageFactory.getInstance().reset();
 	}
 	
 	@Given("Not a validated user")

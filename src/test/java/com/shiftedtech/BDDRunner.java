@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = { "@Aceptance" },
+        //tags = { "@Aceptance" },
         //tags = { "@smoke" },         /* smoke test only */
         //tags = { "@Aceptance,@Functional" }, /* debug or smoke test */
         //tags = { "@Smoke","@Functional" },  /* debug and smoke test */

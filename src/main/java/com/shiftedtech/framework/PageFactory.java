@@ -12,8 +12,6 @@ public class PageFactory {
 	private LoginPage loginPage;
 	
 	private PageFactory() {
-		homePage = new HomePage();
-		loginPage = new LoginPage();
 	}
 	
 	public static PageFactory getInstance() {
@@ -23,11 +21,22 @@ public class PageFactory {
 		return instance;
 	}
 	
+	public void reset() {
+		homePage = null;
+		loginPage = null;
+	}
+	
 	public HomePage homePage() {
+		if(homePage == null) {
+			homePage = new HomePage();
+		}
 		return homePage;
 	}
 	
 	public LoginPage loginPage() {
+		if(loginPage == null) {
+			loginPage = new LoginPage();
+		}
 		return loginPage;
 	}
 

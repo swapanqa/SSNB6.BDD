@@ -41,7 +41,7 @@ Feature: Spree login functionality
 	  And User enter password as "shiftedtech"
 	  And User click login button
 	  Then Browser display Login page
-	  And Login not success message "Invalid email or password.FAIL" display
+	  And Login not success message "Invalid email or password." display
 	
 	@Smoke @Functional 
 	Scenario Outline: 3.Valid user with valid password Data Driven

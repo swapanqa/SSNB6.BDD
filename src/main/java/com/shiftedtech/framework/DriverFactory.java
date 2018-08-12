@@ -1,5 +1,8 @@
 package com.shiftedtech.framework;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
@@ -16,6 +20,7 @@ public class DriverFactory {
 	
 	private ThreadLocal<WebDriver> driverCollection = new ThreadLocal<WebDriver>();
 	
+	private static String LOCAL_GRID_URL = "http://10.10.20.70:4444/wd/hub";
  
 	
 	private static DriverFactory instance = null;
@@ -69,6 +74,17 @@ public class DriverFactory {
 				InternetExplorerDriverManager.getInstance().arch32().setup();
 				WebDriver driver = new InternetExplorerDriver();
 		        instance.driverCollection.set(driver);
+			}
+			else if(browser.toUpperCase().contentEquals("GRID-CH")) {
+				 DesiredCapabilities caps = new DesiredCapabilities();
+		         caps.setPlatform(Platform.ANY);
+		         caps.setBrowserName("chrome");
+		         try {
+		        	 WebDriver driver = new RemoteWebDriver(new URL(LOCAL_GRID_URL),caps);
+		             instance.driverCollection.set(driver);
+		            } catch (MalformedURLException e) {
+		                e.printStackTrace();
+		            }
 			}
 			else {
 				ChromeDriverManager.getInstance().setup();
