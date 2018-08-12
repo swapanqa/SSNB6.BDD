@@ -96,11 +96,11 @@
             <artifactId>poi-ooxml</artifactId>
             <version>3.17</version>
         </dependency>
-        <dependency>
+        <!-- <dependency>
         	<groupId>com.paxovision</groupId>
             <artifactId>jira-client</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
+        </dependency> -->
     </dependencies>
 
     <build>
