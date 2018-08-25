@@ -15,7 +15,7 @@ public class CreateFeature {
 
 		JiraFeatureFactory.getInstance()
         		.buildFeatureFile("src//test//resources//features//","CUC-1");
-*/
-	}
 
-}
+	}*/
+
+}}

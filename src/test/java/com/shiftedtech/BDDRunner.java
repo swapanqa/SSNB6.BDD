@@ -7,16 +7,16 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        //tags = { "@Aceptance" },
+        tags = { "@Aceptance" },
         //tags = { "@smoke" },         /* smoke test only */
         //tags = { "@Aceptance,@Functional" }, /* debug or smoke test */
         //tags = { "@Smoke","@Functional" },  /* debug and smoke test */
         
 		//monochrome = true,
 		
-        //features = "src/test/resources/features/",
+        features = "src/test/resources/features/",
 		
-        features = "src/test/resources/features/SpreeLogin2.feature",
+       // features = "src/test/resources/features/SpreeLogin2.feature",
         
         //features = {"src/test/resources/features/SpreeLogin.feature",
         //            "src/test/resources/features/SpreeLogin2.feature"},
