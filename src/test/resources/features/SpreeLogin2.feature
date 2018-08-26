@@ -17,7 +17,7 @@
 ## (Comments)
 #Sample Feature Definition Template
 
-Feature: Spree login functionality
+Feature: Spree login functionality - 2
   This explain how verious login functionality will work
 
   Background:

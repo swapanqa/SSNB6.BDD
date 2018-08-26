@@ -17,10 +17,10 @@
 ## (Comments)
 #Sample Feature Definition Template
 #@tag
-Feature: Spree login functionality
+Feature: Spree login functionality - 1
   This explain how verious login functionality will work
 
-  #@tag1
+  @Aceptance
   Scenario: 1.Valid user with valid password
 	  Given Not a validated user
 	  When User browse to the site
@@ -43,7 +43,7 @@ Feature: Spree login functionality
 	  And User enter password as "shiftedtech"
 	  And User click login button
 	  Then Browser display Login page
-	  And Login not success message "Invalid email or password." display
+	  And Login not success message "Invalid email or password.fail" display
 	 
 	Scenario Outline: 3.Valid user with valid password Data Driven
 	  Given Not a validated user
