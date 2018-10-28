@@ -30,10 +30,10 @@ public class SikuliTest {
 	public void test1() throws FindFailed {
 		Screen screen = new Screen();
 		
-		Pattern singinLink = new Pattern("C:\\Users\\ShiftTeacher\\eclipse-workspace\\ssnb6.bdd\\screenshots\\signinLink.png");
-		Pattern emailTextbox = new Pattern("C:\\Users\\ShiftTeacher\\eclipse-workspace\\ssnb6.bdd\\screenshots\\emailTextBox.png");
-		Pattern nextbutton = new Pattern("C:\\Users\\ShiftTeacher\\eclipse-workspace\\ssnb6.bdd\\screenshots\\nextButton.png");
-		Pattern passwordTextbox = new Pattern("C:\\Users\\ShiftTeacher\\eclipse-workspace\\ssnb6.bdd\\screenshots\\passwordTextbox.png");
+		Pattern singinLink = new Pattern("C:\\MyProject\\ssnb6.bdd\\screenshots\\signinLink.png");
+		Pattern emailTextbox = new Pattern("C:\\MyProject\\ssnb6.bdd\\screenshots\\emailTextBox.png");
+		Pattern nextbutton = new Pattern("C:\\MyProject\\ssnb6.bdd\\screenshots\\nextButton.png");
+		Pattern passwordTextbox = new Pattern("C:\\MyProject\\ssnb6.bdd\\screenshots\\passwordTextbox.png");
 	
 		driver.navigate().to("https://www.google.com/gmail/about/#");
 		
